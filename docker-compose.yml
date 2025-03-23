@@ -31,14 +31,14 @@ services:
       - ./log:/data/log
       - ./.streamlit:/app/.streamlit
       # Uncomment the following two lines if you want to connect to any local changes
-      # - ./skyvern:/app/skyvern
-      # - ./alembic:/app/alembic
+      - ./skyvern:/app/skyvern
+      - ./alembic:/app/alembic
     environment:
       - DATABASE_STRING=postgresql+psycopg://skyvern:skyvern@postgres:5432/skyvern
       - BROWSER_TYPE=chromium-headful
       - ENABLE_OPENAI=true
       - LLM_KEY=OPENAI_GPT4O
-      - OPENAI_API_KEY=<your_openai_key>
+      - 'OPENAI_API_KEY=${POPENAI_API_KEY}'
       # If you want to use other LLM provider, like azure and anthropic:
       # - ENABLE_ANTHROPIC=true
       # - LLM_KEY=ANTHROPIC_CLAUDE3.5_SONNET

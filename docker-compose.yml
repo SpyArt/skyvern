@@ -9,7 +9,7 @@ services:
       - ./postgres-data:/var/lib/postgresql/data
     environment:
       - PGDATA=/var/lib/postgresql/data/pgdata
-      - POSTGRES_USER=sskyvern_coolify
+      - POSTGRES_USER=skyvern_coolify
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_POSTGRES_DB=skyvern
     healthcheck:

@@ -10,7 +10,7 @@ services:
     environment:
       - PGDATA=/var/lib/postgresql/data/pgdata
       - POSTGRES_USER=skyvern_coolify
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - 'POSTGRES_PASSWORD=${POSTGRES_PASSWORD}'
       - POSTGRES_POSTGRES_DB=skyvern
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U skyvern"]
